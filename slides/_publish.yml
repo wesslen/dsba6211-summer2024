@@ -1,0 +1,6 @@
+- source: 02-class.qmd
+  netlify:
+    - id: 09bde735-603f-4827-94f8-d8d47327f765
+      url: 'https://lovely-otter-4273fa.netlify.app'
+    - id: fa096639-f5f4-402d-80c6-ab43cd0a7fbc
+      url: 'https://dsba6211-summer2024-scikit-learn.netlify.app'
