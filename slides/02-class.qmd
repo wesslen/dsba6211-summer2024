@@ -1,10 +1,10 @@
 ---
-title: "Class 2: Intro to scikit-learn"
+title: "Class 2: Intro to `scikit-learn`"
 subtitle: "DSBA6211 (Summer 2024)"
 author: "Ryan Wesslen"
 format: 
     revealjs:
-        footer: "DSBA6211 Class 2: Intro to scikit-learn"
+        footer: "DSBA6211 Class 2: Intro to `scikit-learn`"
 ---
 
 ## What is `scikit-learn`?
@@ -20,7 +20,7 @@ format:
 
 ---
 
-## What `scikit-learn` Does Not Do
+### What `scikit-learn` Does Not Do
 
 - Deep learning (use TensorFlow or PyTorch)
 - Reinforcement learning
@@ -28,9 +28,9 @@ format:
 
 ---
 
-## Supervised vs Unsupervised Learning
+### Supervised vs Unsupervised Learning
 
-### Supervised Learning
+#### Supervised Learning
 
 - Models learn from labeled data
 - Predict outcomes based on input features
@@ -40,9 +40,9 @@ format:
 
 ---
 
-## Supervised vs Unsupervised Learning
+### Supervised vs Unsupervised Learning
 
-### Unsupervised Learning
+#### Unsupervised Learning
 
 - Models learn from unlabeled data
 - Discover patterns or structure in data
@@ -52,7 +52,7 @@ format:
 
 ---
 
-## Scikit-learn Workflow
+### Scikit-learn Workflow
 
 1. **Data Collection and Preparation**: Gather, clean data
 
@@ -147,7 +147,7 @@ clf.predict(X)  # predict classes of the training data
 
 ```{python}
 #| echo: true
-clf.predict([[4, 5, 6], [14, 15, 16]])  # predict classes of new data
+clf.predict([[14, 15, 16], [4, 5, 6]])  # predict classes of new data
 ```
 
 <br>
@@ -156,7 +156,7 @@ clf.predict([[4, 5, 6], [14, 15, 16]])  # predict classes of new data
 
 ```{python}
 #| echo: true
-clf.predict_proba([[4, 5, 6], [14, 15, 16]]) # output predicted probabilities
+clf.predict_proba([[14, 15, 16], [4, 5, 6]]) # output predicted probabilities
 ```
 
 . . .
@@ -190,7 +190,7 @@ Check out [tutorial on different scalars](https://scikit-learn.org/stable/auto_e
 
 ---
 
-## Pipelines
+## Data Partitioning
 
 ```{python}
 #| echo: true
@@ -215,7 +215,7 @@ y[0:5]
 
 ---
 
-## Pipelines
+## Data Partitioning
 
 ```{python}
 #| echo: true
@@ -242,7 +242,7 @@ y_train[0:5]
 
 ---
 
-## Pipelines
+## Data Partitioning
 
 ![](https://learningds.org/_images/TrainTestDiagram.png)
 
@@ -409,7 +409,7 @@ mod_cv.score(X_test, y_test)
 
 3. Conversely, the `transform` method should be used on both train and test subsets as the same preprocessing should be applied to all the data. This can be achieved by using `fit_transform` on the train subset and transform on the test subset.
 
-# Logistic Regression, Regularization, and other Classifiers
+# Logistic Regression and Regularization
 
 ---
 
@@ -504,15 +504,6 @@ plt.show()
 
 ---
 
-## Regularization by default
-
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">By default, logistic regression in scikit-learn runs w L2 regularization on and defaulting to magic number C=1.0. How many millions of ML/stats/data-mining papers have been written by authors who didn&#39;t report (&amp; honestly didn&#39;t think they were) using regularization?</p>&mdash; Zachary Lipton (@zacharylipton) <a href="https://twitter.com/zacharylipton/status/1167298276686589953?ref_src=twsrc%5Etfw">August 30, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-[r y x r's Scikit-learn's defaults are wrong blog](https://ryxcommar.com/2019/08/30/scikit-learns-defaults-are-wrong/)
-
----
-
 ## Motivation
 
 **Regularization**: add penalty to loss function for larger coefficients 
@@ -579,6 +570,19 @@ accuracy_score(logreg_noreg.predict(X_test[:, :2]), y_test)
 
 The explanation of why is a bit challenging. *Recommend* this [regularization lesson](https://inria.github.io/scikit-learn-mooc/python_scripts/linear_models_regularization.html) or [Chapter 16 in Learning Data Science](https://learningds.org/ch/16/ms_regularization.html)
 
+---
+
+## Regularization by default
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">By default, logistic regression in scikit-learn runs w L2 regularization on and defaulting to magic number C=1.0. How many millions of ML/stats/data-mining papers have been written by authors who didn&#39;t report (&amp; honestly didn&#39;t think they were) using regularization?</p>&mdash; Zachary Lipton (@zacharylipton) <a href="https://twitter.com/zacharylipton/status/1167298276686589953?ref_src=twsrc%5Etfw">August 30, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+. . .
+
+::: {.callout-warning}
+## Regularization is dangerous without preprocessing.
+
+Preprocessing (e.g., `StandardScalar`) is critical when using regularization to ensure that all features contribute equally, preventing disproportionate penalization of larger-scaled features. It also improves convergence speed and prevents numerical instability in optimization algorithms. For more details, read [Scikit-learn's defaults are wrong](https://ryxcommar.com/2019/08/30/scikit-learns-defaults-are-wrong/).
+:::
 
 ---
 
