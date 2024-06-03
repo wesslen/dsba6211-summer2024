@@ -393,7 +393,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Class 2: Intro to scikit-learn</h1>
+  <h1 class="title">Class 2: Intro to <code>scikit-learn</code></h1>
   <p class="subtitle">DSBA6211 (Summer 2024)</p>
 
 <div class="quarto-title-authors">
@@ -420,17 +420,19 @@ Ryan Wesslen
 </ul></li>
 </ul>
 </section>
-<section id="what-scikit-learn-does-not-do" class="slide level2">
-<h2>What <code>scikit-learn</code> Does Not Do</h2>
+<section class="slide level2">
+
+<h3 id="what-scikit-learn-does-not-do">What <code>scikit-learn</code> Does Not Do</h3>
 <ul>
 <li>Deep learning (use TensorFlow or PyTorch)</li>
 <li>Reinforcement learning</li>
 <li>Real-time prediction serving</li>
 </ul>
 </section>
-<section id="supervised-vs-unsupervised-learning" class="slide level2">
-<h2>Supervised vs Unsupervised Learning</h2>
-<h3 id="supervised-learning">Supervised Learning</h3>
+<section class="slide level2">
+
+<h3 id="supervised-vs-unsupervised-learning">Supervised vs Unsupervised Learning</h3>
+<h4 id="supervised-learning">Supervised Learning</h4>
 <ul>
 <li>Models learn from labeled data</li>
 <li>Predict outcomes based on input features</li>
@@ -441,9 +443,10 @@ Ryan Wesslen
 </ul></li>
 </ul>
 </section>
-<section id="supervised-vs-unsupervised-learning-1" class="slide level2">
-<h2>Supervised vs Unsupervised Learning</h2>
-<h3 id="unsupervised-learning">Unsupervised Learning</h3>
+<section class="slide level2">
+
+<h3 id="supervised-vs-unsupervised-learning-1">Supervised vs Unsupervised Learning</h3>
+<h4 id="unsupervised-learning">Unsupervised Learning</h4>
 <ul>
 <li>Models learn from unlabeled data</li>
 <li>Discover patterns or structure in data</li>
@@ -454,8 +457,9 @@ Ryan Wesslen
 </ul></li>
 </ul>
 </section>
-<section id="scikit-learn-workflow" class="slide level2">
-<h2>Scikit-learn Workflow</h2>
+<section class="slide level2">
+
+<h3 id="scikit-learn-workflow">Scikit-learn Workflow</h3>
 <ol type="1">
 <li><p><strong>Data Collection and Preparation</strong>: Gather, clean data</p></li>
 <li><p><strong>Feature Engineering</strong>: Select/transform features, standardize or normalize data</p></li>
@@ -477,13 +481,22 @@ Ryan Wesslen
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>python <span class="op">-</span>m pip install scikit<span class="op">-</span>learn <span class="co"># typical way to install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p><strong>Q: How to find out the latest versions of <code>scikit-learn</code>?</strong></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
+<p><strong>How to find out the latest versions of <code>scikit-learn</code>?</strong></p>
+</div>
+<div class="callout-content">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="https://pypi.org/project/scikit-learn/"><img data-src="images/scikit-learn-pypi.png" width="540"></a></p>
+<p><a href="https://pypi.org/project/scikit-learn/"><img data-src="images/scikit-learn-pypi.png" width="400"></a></p>
 </figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -498,8 +511,8 @@ Ryan Wesslen
 <span id="cb2-6"><a href="#cb2-6"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
 <span id="cb2-7"><a href="#cb2-7"></a></span>
 <span id="cb2-8"><a href="#cb2-8"></a>clf.fit(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
-<style>#sk-container-id-3 {
+<div class="cell-output cell-output-display" data-execution_count="1">
+<style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: black;
   --sklearn-color-line: gray;
@@ -529,15 +542,15 @@ Ryan Wesslen
   }
 }
 
-#sk-container-id-3 {
+#sk-container-id-1 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-3 pre {
+#sk-container-id-1 pre {
   padding: 0;
 }
 
-#sk-container-id-3 input.sk-hidden--visually {
+#sk-container-id-1 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -549,7 +562,7 @@ Ryan Wesslen
   width: 1px;
 }
 
-#sk-container-id-3 div.sk-dashed-wrapped {
+#sk-container-id-1 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -557,7 +570,7 @@ Ryan Wesslen
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-3 div.sk-container {
+#sk-container-id-1 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -567,7 +580,7 @@ Ryan Wesslen
   position: relative;
 }
 
-#sk-container-id-3 div.sk-text-repr-fallback {
+#sk-container-id-1 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -583,14 +596,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-3 div.sk-parallel-item::after {
+#sk-container-id-1 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-3 div.sk-parallel {
+#sk-container-id-1 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -598,28 +611,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-3 div.sk-parallel-item {
+#sk-container-id-1 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-3 div.sk-parallel-item:first-child::after {
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-3 div.sk-parallel-item:last-child::after {
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-3 div.sk-parallel-item:only-child::after {
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-3 div.sk-serial {
+#sk-container-id-1 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -637,14 +650,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-3 div.sk-toggleable {
+#sk-container-id-1 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-3 label.sk-toggleable__label {
+#sk-container-id-1 label.sk-toggleable__label {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -654,7 +667,7 @@ clickable and can be expanded/collapsed.
   text-align: center;
 }
 
-#sk-container-id-3 label.sk-toggleable__label-arrow:before {
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -662,13 +675,13 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-3 div.sk-toggleable__content {
+#sk-container-id-1 div.sk-toggleable__content {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -677,12 +690,12 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-3 div.sk-toggleable__content.fitted {
+#sk-container-id-1 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-3 div.sk-toggleable__content pre {
+#sk-container-id-1 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -690,79 +703,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-3 div.sk-toggleable__content.fitted pre {
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   max-height: 200px;
   max-width: 100%;
   overflow: auto;
 }
 
-#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-3 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-3 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-3 div.sk-label label.sk-toggleable__label,
-#sk-container-id-3 div.sk-label label {
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-3 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-3 div.sk-label label {
+#sk-container-id-1 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-3 div.sk-label-container {
+#sk-container-id-1 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-3 div.sk-estimator {
+#sk-container-id-1 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -772,18 +785,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-3 div.sk-estimator.fitted {
+#sk-container-id-1 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-3 div.sk-estimator:hover {
+#sk-container-id-1 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-3 div.sk-estimator.fitted:hover {
+#sk-container-id-1 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -870,7 +883,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-3 a.estimator_doc_link {
+#sk-container-id-1 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -885,25 +898,25 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-3 a.estimator_doc_link.fitted {
+#sk-container-id-1 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-3 a.estimator_doc_link:hover {
+#sk-container-id-1 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-3 a.estimator_doc_link.fitted:hover {
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" checked=""><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;RandomForestClassifier<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(random_state=0)</pre></div> </div></div></div></div>
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;RandomForestClassifier<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(random_state=0)</pre></div> </div></div></div></div>
 </div>
 </div>
 </section>
@@ -933,35 +946,43 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <h2>Example: Predicting</h2>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>clf.predict(X)  <span class="co"># predict classes of the training data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>array([0, 1])</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>clf.predict([[<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]])  <span class="co"># predict classes of new data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>array([0, 1])</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>clf.predict([[<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])  <span class="co"># predict classes of new data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([1, 0])</code></pre>
 </div>
 </div>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>clf.predict_proba([[<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]]) <span class="co"># output predicted probabilities</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
-<pre><code>array([[0.7 , 0.3 ],
-       [0.22, 0.78]])</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>clf.predict_proba([[<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]]) <span class="co"># output predicted probabilities</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([[0.22, 0.78],
+       [0.7 , 0.3 ]])</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><br></p>
-<p>Q: How to convert from probabilities to hard predictions?</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
+<p><strong>How to convert from probabilities to hard predictions?</strong></p>
+</div>
+<div class="callout-content">
 <p><a href="https://scikit-learn.org/1.5/modules/classification_threshold.html">Thresholding</a></p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="transformers-and-preprocessors" class="slide level2">
@@ -972,7 +993,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb9-3"><a href="#cb9-3"></a>     [<span class="dv">1</span>, <span class="op">-</span><span class="dv">10</span>]]</span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co"># scale data with StandardScalar for Z transform</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a>StandardScaler().fit(X).transform(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([[-1.,  1.],
        [ 1., -1.]])</code></pre>
 </div>
@@ -986,21 +1007,21 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>Check out <a href="https://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html">tutorial on different scalars</a>.</p>
 </div>
 </section>
-<section id="pipelines" class="slide level2">
-<h2>Pipelines</h2>
+<section id="data-partitioning" class="slide level2">
+<h2>Data Partitioning</h2>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="co"># load the iris dataset and split it into train and test sets</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>X, y <span class="op">=</span> load_iris(return_X_y<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb11-4"><a href="#cb11-4"></a><span class="bu">type</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>numpy.ndarray</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>X[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array([[5.1, 3.5, 1.4, 0.2],
        [4.9, 3. , 1.4, 0.2],
        [4.7, 3.2, 1.3, 0.2],
@@ -1011,13 +1032,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p><br></p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>y[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([0, 0, 0, 0, 0])</code></pre>
 </div>
 </div>
 </section>
-<section id="pipelines-1" class="slide level2">
-<h2>Pipelines</h2>
+<section id="data-partitioning-1" class="slide level2">
+<h2>Data Partitioning</h2>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
@@ -1031,7 +1052,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p><br></p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>X_train[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>array([[5.9, 3. , 4.2, 1.5],
        [5.8, 2.6, 4. , 1.2],
        [6.8, 3. , 5.5, 2.1],
@@ -1042,23 +1063,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p><br></p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>y_train[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>array([1, 1, 2, 0, 2])</code></pre>
 </div>
 </div>
 </section>
-<section id="pipelines-2" class="slide level2">
-<h2>Pipelines</h2>
+<section id="data-partitioning-2" class="slide level2">
+<h2>Data Partitioning</h2>
 
 <img data-src="https://learningds.org/_images/TrainTestDiagram.png" class="r-stretch"><p><a href="https://learningds.org/ch/16/ms_train_test.html">Chapter 16.2 Learning Data Science</a></p>
 </section>
-<section id="q-what-role-does-the-random-seed-play-in-partitioning" class="slide level2">
-<h2>Q: What role does the random seed play in partitioning?</h2>
+<section class="slide level2">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What role does the random seed play in partitioning?</strong></p>
+</div>
+<div class="callout-content">
+<p>It ensures reproducibility when using random sample partitioning of the test/train splits. Without it, your partitions, and thus your model performance will change each time you train. <strong>This is bad.</strong></p>
+</div>
+</div>
+</div>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, random_state<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb23-2"><a href="#cb23-2"></a></span>
 <span id="cb23-3"><a href="#cb23-3"></a>X_train[<span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([[6.5, 2.8, 4.6, 1.5],
        [6.7, 2.5, 5.8, 1.8]])</code></pre>
 </div>
@@ -1069,17 +1103,30 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, random_state<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a>X_train[<span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>array([[5.9, 3. , 4.2, 1.5],
        [5.8, 2.6, 4. , 1.2]])</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p>The <a href="https://scikit-learn.org/stable/glossary.html#term-random_state"><code>random_state</code></a> is also used in some estimators like the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>RandomForestClassifier</code></a>.</p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Be sure to set your <code>random_state</code>!</strong></p>
+</div>
+<div class="callout-content">
+<p>If you’re not explicit, you’ll inevitably run into reproducibility problems!</p>
+<p><a href="https://scikit-learn.org/stable/glossary.html#term-random_state"><code>random_state</code></a> is also used in some estimators like <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>RandomForestClassifier</code></a>.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="pipelines-3" class="slide level2">
+<section id="pipelines" class="slide level2">
 <h2>Pipelines</h2>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -1091,8 +1138,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb27-7"><a href="#cb27-7"></a></span>
 <span id="cb27-8"><a href="#cb27-8"></a><span class="co"># fit the whole pipeline</span></span>
 <span id="cb27-9"><a href="#cb27-9"></a>pipe.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
-<style>#sk-container-id-4 {
+<div class="cell-output cell-output-display" data-execution_count="14">
+<style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: black;
   --sklearn-color-line: gray;
@@ -1122,15 +1169,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   }
 }
 
-#sk-container-id-4 {
+#sk-container-id-2 {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-4 pre {
+#sk-container-id-2 pre {
   padding: 0;
 }
 
-#sk-container-id-4 input.sk-hidden--visually {
+#sk-container-id-2 input.sk-hidden--visually {
   border: 0;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -1142,7 +1189,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   width: 1px;
 }
 
-#sk-container-id-4 div.sk-dashed-wrapped {
+#sk-container-id-2 div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -1150,7 +1197,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-4 div.sk-container {
+#sk-container-id-2 div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -1160,7 +1207,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   position: relative;
 }
 
-#sk-container-id-4 div.sk-text-repr-fallback {
+#sk-container-id-2 div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -1176,14 +1223,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-4 div.sk-parallel-item::after {
+#sk-container-id-2 div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-4 div.sk-parallel {
+#sk-container-id-2 div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1191,28 +1238,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-4 div.sk-parallel-item {
+#sk-container-id-2 div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-4 div.sk-parallel-item:first-child::after {
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-4 div.sk-parallel-item:last-child::after {
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-4 div.sk-parallel-item:only-child::after {
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-4 div.sk-serial {
+#sk-container-id-2 div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1230,14 +1277,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-4 div.sk-toggleable {
+#sk-container-id-2 div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-4 label.sk-toggleable__label {
+#sk-container-id-2 label.sk-toggleable__label {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -1247,7 +1294,7 @@ clickable and can be expanded/collapsed.
   text-align: center;
 }
 
-#sk-container-id-4 label.sk-toggleable__label-arrow:before {
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -1255,13 +1302,13 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-4 label.sk-toggleable__label-arrow:hover:before {
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-4 div.sk-toggleable__content {
+#sk-container-id-2 div.sk-toggleable__content {
   max-height: 0;
   max-width: 0;
   overflow: hidden;
@@ -1270,12 +1317,12 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-4 div.sk-toggleable__content.fitted {
+#sk-container-id-2 div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-4 div.sk-toggleable__content pre {
+#sk-container-id-2 div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -1283,79 +1330,79 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-4 div.sk-toggleable__content.fitted pre {
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-4 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
   max-height: 200px;
   max-width: 100%;
   overflow: auto;
 }
 
-#sk-container-id-4 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-4 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-4 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-4 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-4 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-4 div.sk-label label.sk-toggleable__label,
-#sk-container-id-4 div.sk-label label {
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-4 div.sk-label:hover label.sk-toggleable__label {
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-4 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-4 div.sk-label label {
+#sk-container-id-2 div.sk-label label {
   font-family: monospace;
   font-weight: bold;
   display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-4 div.sk-label-container {
+#sk-container-id-2 div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-4 div.sk-estimator {
+#sk-container-id-2 div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -1365,18 +1412,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-4 div.sk-estimator.fitted {
+#sk-container-id-2 div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-4 div.sk-estimator:hover {
+#sk-container-id-2 div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-4 div.sk-estimator.fitted:hover {
+#sk-container-id-2 div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -1463,7 +1510,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-4 a.estimator_doc_link {
+#sk-container-id-2 a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
@@ -1478,36 +1525,36 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-4 a.estimator_doc_link.fitted {
+#sk-container-id-2 a.estimator_doc_link.fitted {
   /* fitted */
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-4 a.estimator_doc_link:hover {
+#sk-container-id-2 a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-4 a.estimator_doc_link.fitted:hover {
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-4" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
-                ('logisticregression', LogisticRegression())])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox"><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
-                ('logisticregression', LogisticRegression())])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox"><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox"><label for="sk-estimator-id-8" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression()</pre></div> </div></div></div></div></div></div>
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression', LogisticRegression())])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox"><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression', LogisticRegression())])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox"><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox"><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression()</pre></div> </div></div></div></div></div></div>
 </div>
 </div>
 </section>
-<section id="pipelines-4" class="slide level2">
+<section id="pipelines-1" class="slide level2">
 <h2>Pipelines</h2>
 <p>We can now predict on the pipeline</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>X_test[<span class="dv">0</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>array([[5.8, 2.8, 5.1, 2.4],
        [6. , 2.2, 4. , 1. ],
        [5.5, 4.2, 1.4, 0.2],
@@ -1518,7 +1565,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p><br></p>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>pipe.predict(X_test[<span class="dv">0</span>:<span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>array([2, 1, 0, 2, 0])</code></pre>
 </div>
 </div>
@@ -1530,7 +1577,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="co"># we can now use it like any other estimator</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>accuracy_score(pipe.predict(X_test), y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>0.9736842105263158</code></pre>
 </div>
 </div>
@@ -1559,7 +1606,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb34-9"><a href="#cb34-9"></a>result <span class="op">=</span> cross_validate(lr, X, y)  <span class="co"># defaults to 5-fold CV</span></span>
 <span id="cb34-10"><a href="#cb34-10"></a></span>
 <span id="cb34-11"><a href="#cb34-11"></a>result[<span class="st">'test_score'</span>]  <span class="co"># r_squared score is high because dataset is easy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>array([0.99602021, 0.99388108, 0.99537012, 0.99633561, 0.99526797])</code></pre>
 </div>
 </div>
@@ -1569,7 +1616,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 <img data-src="https://learningds.org/_images/CVDiagram.png" class="r-stretch"><p><a href="https://learningds.org/ch/16/ms_cv.html">Chapter 16.3 Learning Data Science</a></p>
 <div class="fragment">
-<p><strong>Q: What is cross-validation used for?</strong></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What is cross-validation used for?</strong></p>
+</div>
+<div class="callout-content">
+<p>Model selection like hyperparameter tuning to avoid over-fitting.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="hyperparameter-tuning" class="slide level2">
@@ -1588,14 +1647,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb36-11"><a href="#cb36-11"></a>mod_cv <span class="op">=</span> search.fit(X_train, y_train)</span>
 <span id="cb36-12"><a href="#cb36-12"></a></span>
 <span id="cb36-13"><a href="#cb36-13"></a>mod_cv.best_params_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>{'max_depth': 9, 'n_estimators': 4}</code></pre>
 </div>
 </div>
 <p><br></p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>mod_cv.score(X_test, y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>0.9710365853658537</code></pre>
 </div>
 </div>
@@ -1603,20 +1662,33 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <section id="avoiding-data-leakage" class="slide level2">
 <h2>Avoiding Data Leakage</h2>
 <blockquote>
-<p>In practice, you almost always want to search over a pipeline, instead of a single estimator. One of the main reasons is that if you apply a pre-processing step to the whole dataset without using a pipeline, and then perform any kind of cross-validation, you would be breaking the fundamental assumption of independence between training and testing data. Indeed, since you pre-processed the data using the whole dataset, some information about the test sets are available to the train sets. This will lead to over-estimating the generalization power of the estimator.</p>
+<p>In practice, you almost always want to <strong>search over a pipeline,</strong> instead of a single estimator.</p>
 </blockquote>
+<div class="fragment">
+<blockquote>
+<p>If you apply a pre-processing step to the whole dataset without using a pipeline, and then perform any kind of cross-validation, you’ll have <strong>data leakage</strong>.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Since you pre-processed the data using the whole dataset, some information about the test sets are available to the train sets. This will lead to <strong>over-fitting</strong>.</p>
+</blockquote>
+</div>
 </section>
 <section id="tips-on-avoiding-data-leakage" class="slide level2">
 <h2>Tips on avoiding Data Leakage</h2>
 <ol type="1">
 <li><p>Always split the data into train and test subsets first, particularly before any preprocessing steps.</p></li>
 <li><p>Never include test data when using the <code>fit</code> and <code>fit_transform</code> methods. Using all the data, e.g., <code>fit(X)</code>, can result in overly optimistic scores.</p></li>
-<li><p>Conversely, the <code>transform</code> method should be used on both train and test subsets as the same preprocessing should be applied to all the data. This can be achieved by using <code>fit_transform</code> on the train subset and transform on the test subset.</p></li>
+<li><p>Conversely, the <code>transform</code> method should be used on both train and test subsets as the same preprocessing should be applied to all the data.</p></li>
 </ol>
+<ul>
+<li>Use <code>fit_transform</code> on the train subset and transform on the test subset.</li>
+</ul>
 </section></section>
 <section>
-<section id="logistic-regression-regularization-and-other-classifiers" class="title-slide slide level1 center">
-<h1>Logistic Regression, Regularization, and other Classifiers</h1>
+<section id="logistic-regression-and-regularization" class="title-slide slide level1 center">
+<h1>Logistic Regression and Regularization</h1>
 
 </section>
 <section id="logistic-regression" class="slide level2">
@@ -1653,7 +1725,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span id="cb40-4"><a href="#cb40-4"></a>logreg.fit(X_train[:, :<span class="dv">2</span>], y_train) <span class="co"># only take first two features</span></span>
 <span id="cb40-5"><a href="#cb40-5"></a></span>
 <span id="cb40-6"><a href="#cb40-6"></a>logreg.coef_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>array([[-37.55398599,  33.72795227],
        [ 17.70174387, -16.93316927],
        [ 19.85224212, -16.79478299]])</code></pre>
@@ -1664,7 +1736,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
 <span id="cb42-2"><a href="#cb42-2"></a></span>
 <span id="cb42-3"><a href="#cb42-3"></a>accuracy_score(logreg.predict(X_test[:, :<span class="dv">2</span>]), y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="48">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>0.7631578947368421</code></pre>
 </div>
 </div>
@@ -1711,17 +1783,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </figure>
 </div>
 </div>
-</section>
-<section id="regularization-by-default" class="slide level2">
-<h2>Regularization by default</h2>
-<blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">
-By default, logistic regression in scikit-learn runs w L2 regularization on and defaulting to magic number C=1.0. How many millions of ML/stats/data-mining papers have been written by authors who didn't report (&amp; honestly didn't think they were) using regularization?
-</p>
-— Zachary Lipton (<span class="citation" data-cites="zacharylipton">@zacharylipton</span>) <a href="https://twitter.com/zacharylipton/status/1167298276686589953?ref_src=twsrc%5Etfw">August 30, 2019</a>
-</blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p><a href="https://ryxcommar.com/2019/08/30/scikit-learns-defaults-are-wrong/">r y x r’s Scikit-learn’s defaults are wrong blog</a></p>
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
@@ -1775,7 +1836,7 @@ By default, logistic regression in scikit-learn runs w L2 regularization on and 
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># same example with regularization</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>accuracy_score(logreg.predict(X_test[:, :<span class="dv">2</span>]), y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>0.7631578947368421</code></pre>
 </div>
 </div>
@@ -1788,11 +1849,36 @@ By default, logistic regression in scikit-learn runs w L2 regularization on and 
 <span id="cb47-5"><a href="#cb47-5"></a>logreg_noreg.fit(X_train[:, :<span class="dv">2</span>], y_train)</span>
 <span id="cb47-6"><a href="#cb47-6"></a></span>
 <span id="cb47-7"><a href="#cb47-7"></a>accuracy_score(logreg_noreg.predict(X_test[:, :<span class="dv">2</span>]), y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>0.5789473684210527</code></pre>
 </div>
 </div>
 <p>The explanation of why is a bit challenging. <em>Recommend</em> this <a href="https://inria.github.io/scikit-learn-mooc/python_scripts/linear_models_regularization.html">regularization lesson</a> or <a href="https://learningds.org/ch/16/ms_regularization.html">Chapter 16 in Learning Data Science</a></p>
+</section>
+<section id="regularization-by-default" class="slide level2">
+<h2>Regularization by default</h2>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+By default, logistic regression in scikit-learn runs w L2 regularization on and defaulting to magic number C=1.0. How many millions of ML/stats/data-mining papers have been written by authors who didn't report (&amp; honestly didn't think they were) using regularization?
+</p>
+— Zachary Lipton (<span class="citation" data-cites="zacharylipton">@zacharylipton</span>) <a href="https://twitter.com/zacharylipton/status/1167298276686589953?ref_src=twsrc%5Etfw">August 30, 2019</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Regularization is dangerous without preprocessing.</strong></p>
+</div>
+<div class="callout-content">
+<p>Preprocessing (e.g., <code>StandardScalar</code>) is critical when using regularization to ensure that all features contribute equally, preventing disproportionate penalization of larger-scaled features. It also improves convergence speed and prevents numerical instability in optimization algorithms. For more details, read <a href="https://ryxcommar.com/2019/08/30/scikit-learns-defaults-are-wrong/">Scikit-learn’s defaults are wrong</a>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="how-to-find-the-right-c-value" class="slide level2">
 <h2>How to find the right C value?</h2>
@@ -1879,7 +1965,7 @@ By default, logistic regression in scikit-learn runs w L2 regularization on and 
 <h2>Other topics we don’t have time for</h2>
 
 <img data-src="images/scikit-learn-save.png" class="r-stretch quarto-figure-center"><div class="footer footer-default">
-<p>DSBA6211 Class 2: Intro to scikit-learn</p>
+<p>DSBA6211 Class 2: Intro to <code>scikit-learn</code></p>
 </div>
 </section></section>
     </div>

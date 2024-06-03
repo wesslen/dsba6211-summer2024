@@ -2,3 +2,7 @@
   netlify:
     - id: fa096639-f5f4-402d-80c6-ab43cd0a7fbc
       url: 'https://dsba6211-summer2024-scikit-learn.netlify.app'
+- source: 03-class.qmd
+  netlify:
+    - id: dbbe1185-2dd3-47a6-8b28-79d875805bfa
+      url: 'https://dsba6211-summer2024-credit-scorecard.netlify.app'

@@ -1,0 +1,204 @@
+---
+title: "Class 3: Credit scorecard modeling"
+subtitle: "DSBA6211 (Summer 2024)"
+author: "Ryan Wesslen"
+format: 
+    revealjs:
+        footer: "DSBA6211 Class 3: Credit scorecard modeling"
+---
+
+## Business Problem: Credit Decisioning
+
+- Lenders need to evaluate the likelihood of a borrower repaying a loan or credit obligation
+
+. . .
+
+- The process of deciding whether to approve or decline a credit application (can also include pricing / term)
+
+. . .
+
+- Inaccurate credit decisions can result in significant financial losses or missed opportunities
+
+[NYC Fed Consumer Credit Panel](https://www.newyorkfed.org/microeconomics/hhdc)
+
+---
+
+## Background
+
+- **Early credit scoring**: 1950s-1960s, credit scoring emerged as a way to quantify credit risk using simple, manual systems
+
+. . .
+
+- **Fair Isaac Corporation (FICO)**: 1980s, FICO introduced the first widely-used credit scoring model, which became an industry standard
+
+. . .
+
+- **Credit scoring evolution**: 1990s-2000s, credit scoring models became more sophisticated, incorporating additional data (larger banks) and advanced analytics
+
+---
+
+## Background
+
+- **Regulations**: Largely after the great recession (2007-2010), Basel II and III, Dodd-Frank and other regulations have emphasized the importance of robust model risk management.
+
+. . .
+
+- **Modern credit scorecard modeling**: Today, credit scorecard modeling combines advanced statistical techniques, machine learning, and data science to drive more accurate and efficient credit decisions
+
+# Definition
+
+> A **credit scorecard** consists of a group of characteristics, statistically determined to be predictive in separating good and bad loans or counterparties.
+
+---
+
+![](https://www.lancaster.ac.uk/stor-i-student-sites/katie-howgate/wp-content/uploads/sites/23/2021/02/MockScorecard.png){width=500 fig-align="center"}
+
+---
+
+![](https://www.forbes.com/advisor/wp-content/uploads/2021/07/FICO_Credit_Score_Ranges.png){width=500 fig-align="center"}
+
+---
+
+![](https://www.myfico.com/credit-education-static/images/education/ce_FICO-Score-chart.png){width=500 fig-align="center"}
+
+---
+
+![](https://ml2fceqxldkb.i.optimole.com/cb:HheI.1b580/w:775/h:432/q:mauto/f:best/https://pyramidcreditrepair.com/wp-content/uploads/2023/03/Most-popular-FICO-score-models.png){width=500 fig-align="center"}
+
+---
+
+![](images/credit-scorecard-2.png){width=500 fig-align="center"}
+
+
+---
+
+
+## Building a credit scorecard
+
+::: {.incremental}
+
+1. Gather and clean data
+
+2. Feature engineering & define outcome
+
+3. Partition: Train vs Test
+
+4. Binning / Bucketing: Fine-WoE-Coarse
+
+:::
+
+---
+
+## Coarse binning / bucketing
+
+![](images/credit-scorecard-5.png){width=500 fig-align="center"}
+
+---
+
+## Dummy variables
+
+- This involves splitting your coarse classed variables up so each bin has its own binary dummy variable which will take the value of 1 if an individual falls into that bin for the characteristics or 0 if not. In this case there will be a different coefficient assigned to each dummy variable.
+
+---
+
+## Weight of Evidence
+
+Keep each characteristic as a single variable but for an individual the variable takes the WOE value corresponding to the bin they fall into. 
+
+There will be a **single coefficient** assigned to each variable.
+
+. . .
+
+> WoE measures the **strength of an attribute** in differentiating good and bad accounts. It is based on the ratio of good to bad applicants at each group level
+
+. . .
+
+$$
+\text{WoE}_i = \ln \left( \frac{\frac{\text{Good}_i}{\text{Total Good}}}{\frac{\text{Bad}_i}{\text{Total Bad}}} \right)
+$$
+
+---
+
+## Weight of Evidence
+
+![](https://miro.medium.com/v2/resize:fit:844/format:webp/1*iKPdPXWNB5_jkqX1tmUMtA.png){width=500 fig-align="center"}
+
+---
+
+## Weight of Evidence
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_iNjtD2mdr1Tq2uCDf2kCw.png){width=500 fig-align="center"}
+
+## Weight of Evidence Benefits
+
+1. It can treat outliers. Example: extreme values of $500+ million. WoE will group (e.g., $250+ MM) and use WOE scores of each class than raw values.
+
+. . .
+
+2. Handles missing values by binning them separately.
+
+. . .
+
+3. Since WOE Transformation handles categorical variable so there is no need for dummy variables.
+
+. . .
+
+4. WoE transformation helps build strict linear relationship with log odds. Not easy to accomplish linear relationship using other transforms (e.g., log). If you didn't use WOE, have to trial-error transformation methods.
+
+---
+
+## Information Value
+
+$$
+\text{IV} = \sum_{i} \left( \frac{\text{Good}_i}{\text{Total Good}} - \frac{\text{Bad}_i}{\text{Total Bad}} \right) \cdot \text{WoE}_i
+$$
+
+. . .
+
+![](https://1.bp.blogspot.com/-eNJ4G_DqhUs/XNRigoIXh2I/AAAAAAAAHiU/8Bt059tLpDoc6DKBUPCOf3ffOW2eOO2DQCLcBGAs/s1600-rw/IV_WOE.png){width=700 fig-align="center"}
+
+<p style="text-align: center;">[Excel template for WoE and IV](https://github.com/deepanshu88/Datasets/raw/master/UploadedFiles/WOE%20and%20IV.xlsx)</p>
+
+---
+
+## Information Value
+
+- Information value increases as bins / groups increases for an independent variable. 
+
+:::{.callout-warning}
+## Be careful with 20+ bins due to sparsity
+
+Some bins may have a very few number of events and non-events.
+:::
+
+. . .
+
+:::{.callout-caution}
+## IV only designed for logistic regression
+
+Only use information value for feature (variable) selection with binary logistic regression (not random forest, SVM, etc.) 
+
+:::
+---
+
+## Building a credit scorecard
+
+1. Gather and clean data
+
+2. Feature engineering & define outcome
+
+3. Partition: Train vs Test
+
+4. Binning / Bucketing: Fine-WoE-Coarse
+
+5. Logistic Regression
+
+6. Model Evaluation
+
+7. Create scorecard
+
+---
+
+## Lab 3
+
+[Go to Lab3 Colab Notebooks](https://github.com/wesslen/dsba6211-summer2024/blob/main/notebooks/dsba6211_summer2024_lab3.ipynb)

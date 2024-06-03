@@ -84,12 +84,11 @@ python -m pip install scikit-learn # typical way to install
 
 . . .
 
-**Q: How to find out the latest versions of `scikit-learn`?**
+::: {.callout-tip collapse="true"}
+## How to find out the latest versions of `scikit-learn`?
 
-. . .
-
-[![](images/scikit-learn-pypi.png){width=540}](https://pypi.org/project/scikit-learn/)
-
+[![](images/scikit-learn-pypi.png){width=400}](https://pypi.org/project/scikit-learn/)
+:::
 
 ---
 
@@ -161,13 +160,13 @@ clf.predict_proba([[14, 15, 16], [4, 5, 6]]) # output predicted probabilities
 
 . . .
 
-<br>
+::: {.callout-tip collapse="true"}
 
-Q: How to convert from probabilities to hard predictions?
-
-. . .
+## How to convert from probabilities to hard predictions?
 
 [Thresholding](https://scikit-learn.org/1.5/modules/classification_threshold.html)
+
+:::
 
 ---
 
@@ -250,7 +249,13 @@ y_train[0:5]
 
 ---
 
-## Q: What role does the random seed play in partitioning?
+::: {.callout-tip collapse="true"}
+
+## What role does the random seed play in partitioning?
+
+It ensures reproducibility when using random sample partitioning of the test/train splits. Without it, your partitions, and thus your model performance will change each time you train. **This is bad.**
+
+:::
 
 ```{python}
 #| echo: true
@@ -271,7 +276,15 @@ X_train[0:2]
 
 . . .
 
-The [`random_state`](https://scikit-learn.org/stable/glossary.html#term-random_state) is also used in some estimators like the [`RandomForestClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html).
+::: {.callout-warning}
+## Be sure to set your `random_state`!
+
+If you're not explicit, you'll inevitably run into reproducibility problems!
+
+[`random_state`](https://scikit-learn.org/stable/glossary.html#term-random_state) is also used in some estimators like [`RandomForestClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html).
+:::
+
+
 
 ---
 
@@ -363,7 +376,12 @@ result['test_score']  # r_squared score is high because dataset is easy
 
 . . . 
 
-**Q: What is cross-validation used for?**
+::: {.callout-tip collapse="true"}
+## What is cross-validation used for?
+
+Model selection like hyperparameter tuning to avoid over-fitting.
+
+::: 
 
 ---
 
@@ -397,7 +415,15 @@ mod_cv.score(X_test, y_test)
 
 ## Avoiding Data Leakage
 
-> In practice, you almost always want to search over a pipeline, instead of a single estimator. One of the main reasons is that if you apply a pre-processing step to the whole dataset without using a pipeline, and then perform any kind of cross-validation, you would be breaking the fundamental assumption of independence between training and testing data. Indeed, since you pre-processed the data using the whole dataset, some information about the test sets are available to the train sets. This will lead to over-estimating the generalization power of the estimator.
+> In practice, you almost always want to **search over a pipeline,** instead of a single estimator. 
+
+. . .
+
+> If you apply a pre-processing step to the whole dataset without using a pipeline, and then perform any kind of cross-validation, you'll have **data leakage**.
+
+. . .
+
+> Since you pre-processed the data using the whole dataset, some information about the test sets are available to the train sets. This will lead to **over-fitting**.
 
 ---
 
@@ -407,7 +433,9 @@ mod_cv.score(X_test, y_test)
 
 2. Never include test data when using the `fit` and `fit_transform` methods. Using all the data, e.g., `fit(X)`, can result in overly optimistic scores.
 
-3. Conversely, the `transform` method should be used on both train and test subsets as the same preprocessing should be applied to all the data. This can be achieved by using `fit_transform` on the train subset and transform on the test subset.
+3. Conversely, the `transform` method should be used on both train and test subsets as the same preprocessing should be applied to all the data.
+
+  * Use `fit_transform` on the train subset and transform on the test subset.
 
 # Logistic Regression and Regularization
 
